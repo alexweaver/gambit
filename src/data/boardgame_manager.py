@@ -7,10 +7,15 @@ class ResourceManager(object):
 
 	def __init__(self):
 		self._crawler = WebCrawler()
+		self._parser = None
+		
+	@property
+	def crawler(self):
+		return self._crawler
 
-	def set_url_schema(self, schema):
-		self._crawler.url_schema = schema
-		return self
+	@property
+	def parser(self):
+		return self._parser
 
 class BoardgameManager(ResourceManager):
 
